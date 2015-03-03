@@ -1,0 +1,30 @@
+
+fieldset{
+	width:400px;
+	margin: 0 auto;
+}
+table{
+	border: 1px solid;
+	margin: 0 auto;
+	width: 300px;
+	height: 150px;
+	border-collapse: 0;
+}
+table tr td{
+	border: 1px solid;
+}
+img{
+	height: 30px;
+}
+.content{
+
+	width: 100%;
+	background-image: url(images/login.png);
+}
+.velcome{
+	margin-top: 20px;
+	font-size: 48px;
+	margin: 0 auto;	
+	text-align: center;
+
+}

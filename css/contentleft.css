@@ -1,0 +1,47 @@
+#content{
+	background-color: #F0FFFF;
+	width: 800px;
+	margin: 0 auto;
+}
+#content .left{
+	float: left;	
+	width: 100px;
+	background-color: #F0FFFF;
+}
+#content .left .louceng{
+	margin-left: 0;
+}
+#content .left .louceng table{
+	width: 100px;
+	margin-top: 0;
+	border: 1px solid;
+	border-collapse: collapse;
+
+}
+#content .left .louceng table tr{
+	height: 28px;
+}
+#content .left .louceng table td{
+	text-align: center;
+	border: 1px solid;
+
+}
+#content .left .tijiao{
+	margin-top: 20px;
+	margin-left: 20px;
+}
+#tab{
+	border: 1px solid;
+	width: 700px;
+	border-collapse: collapse;
+}
+#tab tr{
+	height: 28px;
+}
+#tab td{
+	border: 1px solid;
+	text-align: center;
+}
+.loucengback{
+	background-color: #33FF88;
+}
