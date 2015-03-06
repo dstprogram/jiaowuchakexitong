@@ -13,18 +13,11 @@ $(function(){
             xmlhttp = new XMLHTTPRequest();  
          }  
     }  
-
-
 	$(".louceng  tr").click(function(){
 		
 		$(this).addClass('loucengback')
 		.siblings().removeClass("loucengback");
-		createXMLHTTPRequest();
-		xmlhttp.open("get",)
-
-
-
-
-
+       alert($(this).text());
 	});
+   
 });

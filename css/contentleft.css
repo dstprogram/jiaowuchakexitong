@@ -7,6 +7,7 @@
 	float: left;	
 	width: 100px;
 	background-color: #F0FFFF;
+	margin-right: 5px;
 }
 #content .left .louceng{
 	margin-left: 0;
@@ -32,7 +33,7 @@
 }
 #tab{
 	border: 1px solid;
-	width: 700px;
+	width: 695px;
 	border-collapse: collapse;
 }
 #tab tr{
@@ -41,7 +42,40 @@
 #tab td{
 	border: 1px solid;
 	text-align: center;
+	font-size: 14px;
 }
 .loucengback{
 	background-color: #33FF88;
+}
+.even{
+	background-color: #EEA2AD;
+}
+.odd{
+	background-color: #F0FFFF;
+}
+#hiddenDiv{
+	position: absolute;
+	visibility: hidden;
+	overflow: hidden;
+	background-color:#B9D3EE;
+	border: 1px solid;
+	width: 250px;
+	height: 150px;
+}
+.result{
+	text-align: center;
+	margin-top: 10px;
+}
+#tongguo{
+	margin-top: 20px;
+}
+#conform{
+	margin-top: 20px;
+	margin-left: 100px;
+}
+.tongguored{
+	background-color: #FF0000;
+}
+.butongguo{
+	background-color: #7D9EC0;
 }
