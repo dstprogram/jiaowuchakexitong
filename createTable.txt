@@ -1,0 +1,73 @@
+哦 
+就是说 创建<tr><td>内容</td><td>内容</td><td>内容</td>...</tr> 
+然后插入到<table>里就行了
+
+
+var a = document.createElement("a"); 
+a.href = url; 
+a.innerHTML = text; 
+a.style.color = "red"; 
+o.appendChild(a);
+
+
+下面这个是JQuery的 类似这样 每次新建一个加入到表格最后就好了
+$('<div>').html('<label for="'+new_option_id
+                +'" class="dialog_label"><input type="radio" name="SCNI_option_radio" value="'
+                +(options_num+1)+'"/>选项'
+                +(options_num+1)
+                +'：</label><textarea id="'
+                +new_option_id
+                +'" name="SCNI_question_option" class="text ui-widget-content ui-corner-all dialog_textarea" placeholder="请输入选项内容"></textarea>')
+                .appendTo($('#single_choice_no_img fieldset'));
+
+
+
+
+
+text是字符串格式 '<tr><td>'+内容+'</td><td>'内容</td><td>内容</td>...</tr> 
+
+
+
+
+
+<script language="javascript"> 
+var o = document.body; 
+//创建表格 
+function createTable(w,h,r,c) 
+{ 
+var table = document.createElement("table"); 
+var tbody = document.createElement("tbody"); 
+table.width = w; 
+table.height = h; 
+table.border = 1;    
+for(var i=1;i<=r;i++) 
+{ 
+var tr = document.createElement("tr"); 
+for(var j=1;j<=c;j++) 
+{ 
+var td = document.createElement("td"); 
+td.innerHTML = i + "" + j; 
+//td.appendChild(document.createTextNode(i + "" + j)); 
+td.style.color = "#FF0000"; 
+tr.appendChild(td); 
+} 
+tbody.appendChild(tr);    
+} 
+table.appendChild(tbody); 
+o.appendChild(table); 
+} 
+createTable(270,270,9,9); 
+</script>
+这有个实例
+
+
+这个是自己的创建表格的方法
+var tabNode=document.getElementById('tab');
+for (var i = 0; i < database.length; i++) {
+		var trNode=tabNode.insertRow();
+		for (var j = 0; j < 8; j++) {
+			var tdNode=trNode.insertCell();
+			
+			tdNode.innerHTML=i+j;
+		};
+	};
