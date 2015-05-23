@@ -12,25 +12,16 @@
 .mainNav{
 	background-color: #E8E8E8;
 	width: 800px;
-	height: 30px;
+	height: 40px;
 	left: 0;
 
 }
-.mainNav select{
-	height: 25px;
-	font-size: 16px;
+.mainNav ul{
+	position: absolute;
+	margin-top: 10px;
 }
-.mainNav .nav{
 
-	display: inline;
-	left:5px;
-}
 .mainNav ul li{
-	list-style-type: none;
-	float: left;
-	margin-top: 5px;
-	position: relative;
 	font-size: 16px;
 	margin-left: 20px;
-
 }

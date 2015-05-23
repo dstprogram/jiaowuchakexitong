@@ -168,7 +168,6 @@
 		tabNode.appendChild(tr);
 	};*/
 	//createTable(database,database.length,8);
-
 $(function(){	
 	var mydate=new Date();
 	timeH=mydate.getHours();
@@ -211,17 +210,19 @@ $(function(){
 			var tdText="<td>"+database[j].no+"</td><td>"+database[j].classNo+"</td><td>"+database[j].courseName+"</td><td>"
 					+database[j].teacher+"</td><td>"+database[j].classTime+"</td><td>"+database[j].classRoom
 					+"</td><td>"+"<input type='button' class='resultBt' value='结果'>"
-					+"</td><td>"+"<input type='text'>"+"</td>";	
-			createTable(tdText,1,8);
+					+"</td><td>"+"<input type='text' class='form-control'>"+"</td>";	
+			createTable(tdText,1);
 		};
 	};
 	resultButton();
+
 
 
 	//select改变后发生的响应时间
 
 //根据教学楼查
 	$('#jiaoxuelou').change(function(){
+		$('.louceng  tr').removeClass('success');//需要把标记的楼层给删除掉
 		var tabNode=document.getElementById('tab');
 		tabNode.innerHTML=tabText;
 		var jiaoxuelouChange=$(this).children('option:selected').val();
@@ -231,15 +232,17 @@ $(function(){
 				var tdText="<td>"+database[j].no+"</td><td>"+database[j].classNo+"</td><td>"+database[j].courseName+"</td><td>"
 						+database[j].teacher+"</td><td>"+database[j].classTime+"</td><td>"+database[j].classRoom
 						+"</td><td>"+"<input type='button' class='resultBt' value='结果'>"
-						+"</td><td>"+"<input type='text'>"+"</td>";	
-				createTable(tdText,r,8);
+						+"</td><td>"+"<input type='text' class='form-control'>"+"</td>";	
+				createTable(tdText,r);
 			}
 		};
 		resultButton();
+
 	});
 
 	//根据星期查
 	$('#week').change(function(){
+		$('.louceng  tr').removeClass('success');//需要把标记的楼层给删除掉
 		var tabNode=document.getElementById('tab');
 		tabNode.innerHTML=tabText;
 		//$('#tab').html()="";
@@ -251,16 +254,18 @@ $(function(){
 				 tdText="<td>"+database[j].no+"</td><td>"+database[j].classNo+"</td><td>"+database[j].courseName+"</td><td>"
 						+database[j].teacher+"</td><td>"+database[j].classTime+"</td><td>"+database[j].classRoom
 						+"</td><td>"+"<input type='button' class='resultBt' value='结果'/>"
-						+"</td><td>"+"<input type='text'>"+"</td>";	
-			createTable(tdText,1,8);
+						+"</td><td>"+"<input type='text' class='form-control'>"+"</td>";	
+			createTable(tdText,1);
 			}else {
 				//createTable(database,0,0);
 			}			
 		};
 		resultButton();
+
 	});
 	//根据上下午查
 	$('#jieduan').change(function(){
+		$('.louceng  tr').removeClass('success');//需要把标记的楼层给删除掉
 		var tabNode=document.getElementById('tab');
 		tabNode.innerHTML=tabText;
 		var jiaoxuelouChange=$('#jiaoxuelou').children('option:selected').val();
@@ -272,16 +277,16 @@ $(function(){
 				tdText="<td>"+database[j].no+"</td><td>"+database[j].classNo+"</td><td>"+database[j].courseName+"</td><td>"
 						+database[j].teacher+"</td><td>"+database[j].classTime+"</td><td>"+database[j].classRoom
 						+"</td><td>"+"<input type='button' class='resultBt' value='结果'/>"
-						+"</td><td>"+"<input type='text'>"+"</td>";	
-				createTable(tdText,1,8);
+						+"</td><td>"+"<input type='text' class='form-control'>"+"</td>";	
+				createTable(tdText,1);
 			}
 		}
 		resultButton();
+
 	});
 	//最后才是很据楼层查
 	$(".louceng  tr").click(function(){
-		$(this).addClass('loucengback')
-		.siblings().removeClass("loucengback");
+		$(this).addClass('success');
 		var tabNode=document.getElementById('tab');
 		tabNode.innerHTML=tabText;
 		var jiaoxuelouChange=$('#jiaoxuelou').children('option:selected').val();
@@ -309,17 +314,18 @@ $(function(){
 				tdText="<td>"+database[j].no+"</td><td>"+database[j].classNo+"</td><td>"+database[j].courseName+"</td><td>"
 						+database[j].teacher+"</td><td>"+database[j].classTime+"</td><td>"+database[j].classRoom
 						+"</td><td>"+"<input type='button' class='resultBt' value='结果'/>"
-						+"</td><td>"+"<input type='text'>"+"</td>";	
-				createTable(tdText,1,8);
+						+"</td><td>"+"<input type='text' class='form-control'>"+"</td>";	
+				createTable(tdText,1);
 			}
 		}
-		resultButton();    
+		resultButton();  
+
 	});
 });
 //创建表格
-function createTable(tdText,r,c){
+function createTable(tdText,r){
 	var tabNode=document.getElementById('tab');
-	console.log(tdText);
+	//console.log(tdText);//后台打印
 	for (var i = 0; i <r; i++) {
 		var tr=document.createElement("tr");
 		tr.innerHTML+=tdText;
@@ -328,24 +334,27 @@ function createTable(tdText,r,c){
 }
 //点击结果响应的事件
 function resultButton(){
+	/*
+	//绑定模态弹出框，但是隐式div要简单许多
+	$('.resultBt').click(function(){
+		//alert($('#mymodal'));
+		$('#mymodal').modal("toggle");
+	});*/
 	var changeButton;
 	var hiddenDiv=document.getElementById('hiddenDiv');
 	$('.resultBt').click(function(){
 		changeButton=$(this);
-		hiddenDiv.style.top="200px";
-		hiddenDiv.style.left="430px";
 		hiddenDiv.style.visibility="visible";
 
 		$('#conform').click(function(){
 			hiddenDiv.style.visibility="hidden";
 			if($('input[name="result"]:checked').val()=="通过"){
-				changeButton.addClass('tongguored');
+				changeButton.addClass('text-success');
 				changeButton.val("通过");
 			}else{
-				changeButton.addClass('butongguo');
+				changeButton.addClass('text-danger');
 				changeButton.val("不通过");
 			}
-			
 		});
 	});
 }

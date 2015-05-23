@@ -12,55 +12,32 @@
 #content .left .louceng{
 	margin-left: 0;
 }
-#content .left .louceng table{
+#tablou{
 	width: 100px;
-	margin-top: 0;
-	border: 1px solid;
+	margin-top: 0px;
 	border-collapse: collapse;
 
 }
-#content .left .louceng table tr{
-	height: 28px;
-}
-#content .left .louceng table td{
-	text-align: center;
+#tablou td,#tab td{
 	border: 1px solid;
-
 }
 #content .left .tijiao{
 	margin-top: 20px;
-	margin-left: 20px;
 }
 #tab{
-	border: 1px solid;
+	margin-top: 0px;
 	width: 695px;
 	border-collapse: collapse;
 }
-#tab tr{
-	height: 28px;
-}
-#tab td{
-	border: 1px solid;
-	text-align: center;
-	font-size: 14px;
-}
-.loucengback{
-	background-color: #33FF88;
-}
-.even{
-	background-color: #EEA2AD;
-}
-.odd{
-	background-color: #F0FFFF;
-}
 #hiddenDiv{
-	position: absolute;
+	position: relative;
 	visibility: hidden;
 	overflow: hidden;
 	background-color:#B9D3EE;
 	border: 1px solid;
 	width: 250px;
 	height: 150px;
+	margin:0 auto;
 }
 .result{
 	text-align: center;
@@ -72,10 +49,4 @@
 #conform{
 	margin-top: 20px;
 	margin-left: 100px;
-}
-.tongguored{
-	background-color: #FF0000;
-}
-.butongguo{
-	background-color: #7D9EC0;
 }
